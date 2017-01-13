@@ -14,7 +14,7 @@ $(document).ready(function () {
   });
 
   $(function () {
-    var words = ['build', 'design', 'craft', 'consult on', 'beautify', 'prototype'];
+    var words = ['design', 'skillfully craft', 'beautify', 'prototype'];
     $('#wordChanger').addClass('hidden').fadeOut(800, function () {
       $(this).html(words[getRandomInt(0, words.length)]).removeClass('hidden').fadeIn(800);
     });
