@@ -2,9 +2,9 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="T7Lab, partner for crafting beautiful digital services and products.">
+    <meta name="description" content="T7Lab, strategic partner for crafting beautiful digital services and products.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>T7Lab</title>
+    <title>T7Lab - crafting experiences</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -17,10 +17,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <!-- Place favicon.ico in the root directory -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik:500" rel="stylesheet">
 
     <!-- build:css styles/vendor.css -->
     <!-- build:css node_modules/material-design-lite/material.min.css -->
@@ -49,7 +46,7 @@
       <div class="lab-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="lab-title mdl-layout-title">
-            <a href="#start"><img class="lab-logo-image" src="images/logo.png"></a>
+            <a href="#home"><img class="lab-logo-image" src="images/logo.png"></a>
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="lab-header-spacer mdl-layout-spacer"></div>
@@ -81,27 +78,25 @@
       </div>
 
 
-      <main class="mdl-layout__content">
-        <div class="lab-be-together-section mdl-typography--text-center">
-          <h1 class="logo-font lab-slogan">Hi. We are <span>T7Lab.</span></h1>
-          <div class="logo-font lab-sub-slogan">We build</div>
-          <div class="logo-font lab-sub-slogan">digital services & products.</div>
+      <main class="mdl-layout__content" id="mainContainer">
 
-          <a href="#screens">
-            <button class="lab-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-              <i class="material-icons">expand_more</i>
-            </button>
-          </a>
-
+        <!-- SECTION HI WE ARE-->
+        <div class="lab-be-together-section">
+          <div class="lab-claim-container mdl-typography--text">
+            <h1 class="logo-font lab-sub-slogan">Hi. We are <span>T7Lab</span></h1>
+            <div class="logo-font lab-sub-slogan">We <span id="wordChanger" class="hidden">design</span></div>
+            <div class="logo-font lab-sub-slogan"><span>digital</span> services & products.</div>
+          </div>
         </div>
+
       </main>
     </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

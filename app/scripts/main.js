@@ -1,42 +1,31 @@
-$(document).ready(function(){
-    $(function() {
-    var $window = $('.mdl-layout__content'),
-        win_height_padded = $window.height(),
-        isTouch = Modernizr.touch;
-    if (isTouch) {
-        $('.revealOnScroll').addClass('animated');
-    }
-    $window.on('scroll', function(){
-        console.log('Test');
+$(document).ready(function () {
+  $(function () {
+    let mainContainer = $('#mainContainer');
+
+    mainContainer.on('scroll', function () {
+      revealOnScroll();
     });
 
     function revealOnScroll() {
-        console.log('scroll');
-        var scrolled = $window.scrollTop(),
-            win_height_padded = $window.height();
-        // Showed...
-        $(".revealOnScroll:not(.animated)").each(function() {
-            var $this = $(this),
-                offsetTop = $this.offset().top;
-            if (scrolled + win_height_padded > offsetTop) {
-                if ($this.data('timeout')) {
-                    window.setTimeout(function() {
-                        $this.addClass('animated ' + $this.data('animation'));
-                    }, parseInt($this.data('timeout'), 10));
-                } else {
-                    $this.addClass('animated ' + $this.data('animation'));
-                }
-            }
-        });
-        // Hidden...
-        $(".revealOnScroll.animated").each(function(index) {
-            var $this = $(this),
-                offsetTop = $this.offset().top;
-            if (scrolled + win_height_padded < offsetTop) {
-                $(this).removeClass('animated fadeInUp flipInX lightSpeedIn')
-            }
-        });
+      console.log('revealOnScroll');
     }
-    revealOnScroll();
+
+
+  });
+
+
+  $(function () {
+    const words = ['build', 'design', 'craft', 'consult on', 'beautify', 'prototype'];
+    $('#wordChanger').addClass('hidden').fadeOut(800, function () {
+      $(this).html(words[getRandomInt(0, words.length)]).removeClass('hidden').fadeIn(800);
+    })
+  });
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+
 });
-})

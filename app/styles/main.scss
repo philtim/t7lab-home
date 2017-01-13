@@ -1,8 +1,4 @@
 @import 'animate';
-$icon-font-path: '../fonts/';
-
-// bower:scss
-// endbower
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -11,31 +7,20 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 body {
   margin: 0;
+  font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.02em;
 }
 
-.revealOnScroll { opacity: 0; }
+.hidden {
+  opacity: 0;
+}
 
-/* Disable ugly boxes around images in IE10 */
 a img{
-  border: 0px;
+  border: 0;
 }
 
 ::-moz-selection {
@@ -179,33 +164,42 @@ a img{
 
 .lab-be-together-section {
   position: relative;
-  height: 700px;
+  height: 90vh;
   width: auto;
-  background-color: white;
-  background: url('../images/bg01.jpg') center center no-repeat;
+  background: white url('../images/bg03.jpg') center center no-repeat;
   background-size: cover;
 }
 
 .logo-font {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Rubik', sans-serif;
   line-height: 1;
   color: white;
-  font-weight: 500;
 
   span {
     color: #6ab344;
   }
 }
 
+.lab-claim-container {
+  float: left;
+  padding: 100px 50px;
+  margin-top: 10vh;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
 .lab-slogan {
-  font-size: 60px;
-  padding-top: 160px;
+  font-size: 10vw;
 }
 
 .lab-sub-slogan {
-  font-size: 21px;
-  padding-top: 24px;
+  font-size: 6vw;
+  padding-bottom: 14px;
+
 }
+
 
 .lab-create-character {
   font-size: 21px;
@@ -515,18 +509,6 @@ a img{
 
   .lab-be-together-section {
     height: 350px;
-  }
-
-  .lab-slogan {
-    font-size: 26px;
-    margin: 0 16px;
-    padding-top: 24px;
-  }
-
-  .lab-sub-slogan {
-    font-size: 16px;
-    margin: 0 16px;
-    padding-top: 8px;
   }
 
   .lab-create-character {
