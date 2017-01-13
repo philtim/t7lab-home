@@ -1,0 +1,553 @@
+@import 'animate';
+$icon-font-path: '../fonts/';
+
+// bower:scss
+// endbower
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+  margin: 0;
+}
+
+.revealOnScroll { opacity: 0; }
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+::-moz-selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+::selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+.lab-search-box .mdl-textfield__input {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.lab-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.lab-fab {
+  position: absolute;
+  right: 20%;
+  bottom: -26px;
+  z-index: 3;
+  background: #64ffda !important;
+  color: black !important;
+}
+
+.lab-mobile-title {
+  display: none !important;
+}
+
+
+.lab-logo-image {
+  height: 40px;
+  width: auto;
+}
+
+
+.lab-header {
+  overflow: visible;
+  background-color: white;
+}
+
+  .lab-header .material-icons {
+    color: #767777 !important;
+  }
+
+  .lab-header .mdl-layout__drawer-button {
+    background: transparent;
+    color: #767777;
+  }
+
+  .lab-header .mdl-navigation__link {
+    color: #757575;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .lab-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: rtl;
+    order: 1;
+    width: 500px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .lab-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    justify-content: flex-end;
+    width: 800px;
+  }
+
+  .lab-search-box.is-focused + .lab-navigation-container {
+    opacity: 0;
+    width: 100px;
+  }
+
+
+  .lab-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+  }
+
+    .lab-navigation .mdl-navigation__link:hover {
+      border-bottom: 4px solid #8bc34a;
+    }
+
+  .lab-search-box {
+    order: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .lab-more-button {
+    order: 3;
+  }
+
+
+.lab-drawer {
+  border-right: none;
+}
+
+  .lab-drawer-separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+  }
+
+  .lab-drawer .mdl-navigation__link.mdl-navigation__link {
+    font-size: 14px;
+    color: #757575;
+  }
+
+  .lab-drawer span.mdl-navigation__link.mdl-navigation__link {
+    color: #8bc34a;
+  }
+
+  .lab-drawer .mdl-layout-title {
+    position: relative;
+    background: #6ab344;
+    height: 160px;
+  }
+
+    .lab-drawer .lab-logo-image {
+      position: absolute;
+      bottom: 16px;
+    }
+
+.lab-be-together-section {
+  position: relative;
+  height: 700px;
+  width: auto;
+  background-color: white;
+  background: url('../images/bg01.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: white;
+  font-weight: 500;
+
+  span {
+    color: #6ab344;
+  }
+}
+
+.lab-slogan {
+  font-size: 60px;
+  padding-top: 160px;
+}
+
+.lab-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
+
+.lab-create-character {
+  font-size: 21px;
+  padding-top: 400px;
+}
+
+  .lab-create-character a {
+    text-decoration: none;
+    color: #767777;
+    font-weight: 300;
+  }
+
+.lab-screen-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.lab-screens {
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.lab-screen {
+  text-align: center;
+}
+
+.lab-screen .lab-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 2;
+}
+
+.lab-image-link {
+  text-decoration: none;
+}
+
+.lab-wear {
+  display: inline-block;
+  width: 160px;
+  margin-right: 32px;
+}
+
+  .lab-wear .lab-screen-image {
+    width: 40%;
+    z-index: 1;
+  }
+
+
+.lab-phone {
+  display: inline-block;
+  width: 64px;
+  margin-right: 48px;
+}
+
+  .lab-phone .lab-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.lab-tablet {
+  display: inline-block;
+  width: 110px;
+  margin-right: 64px;
+}
+
+  .lab-tablet .lab-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .lab-tablet .lab-link {
+    display: block;
+    z-index: 2;
+  }
+
+
+.lab-tv {
+  display: inline-block;
+  width: 300px;
+  margin-right: 80px;
+}
+
+  .lab-tv .lab-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.lab-auto {
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+}
+
+  .lab-auto .lab-screen-image {
+    display: block;
+    height: 300px;
+    z-index: 1;
+  }
+
+
+.lab-wear-section {
+  position: relative;
+  background: url('images/wear.png') center top no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.lab-wear-band {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #37474f;
+}
+
+.lab-wear-band-text {
+  max-width: 800px;
+  margin-left: 25%;
+  padding: 24px;
+  text-align: left;
+  color: white;
+}
+
+  .lab-wear-band-text p {
+    padding-top: 8px;
+  }
+
+.lab-link {
+  text-decoration: none;
+  color: #8bc34a !important;
+}
+
+  .lab-link:hover {
+    color: #7cb342 !important;
+  }
+
+  .lab-link .material-icons {
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+  }
+
+.lab-alt-link {
+  text-decoration: none;
+  color: #64ffda !important;
+  font-size: 16px;
+}
+
+  .lab-alt-link:hover {
+    color: #00bfa5 !important;
+  }
+
+  .lab-alt-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.lab-customized-section {
+  text-align: center;
+}
+
+.lab-customized-section-text {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
+  .lab-customized-section-text p {
+    padding-top: 16px;
+  }
+
+.lab-customized-section-image {
+  background: url('images/devices.jpg') center top no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.lab-more-section {
+  padding: 80px 0;
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .lab-more-section .lab-section-title {
+    margin-left: 12px;
+    padding-bottom: 24px;
+  }
+
+.lab-card-container {
+}
+
+  .lab-card-container .mdl-card__media {
+    overflow: hidden;
+    background: transparent;
+  }
+
+    .lab-card-container .mdl-card__media img {
+      width: 100%;
+    }
+
+  .lab-card-container .mdl-card__title {
+    background: transparent;
+    height: auto;
+  }
+
+  .lab-card-container .mdl-card__title-text {
+    color: black;
+    height: auto;
+  }
+
+  .lab-card-container .mdl-card__supporting-text {
+    height: auto;
+    color: black;
+    padding-bottom: 56px;
+  }
+
+  .lab-card-container .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .lab-card-container .mdl-card__actions a {
+    border-top: none;
+    font-size: 16px;
+  }
+
+.lab-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+  .lab-footer a:hover {
+    color: #8bc34a;
+  }
+
+  .lab-footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+  }
+
+  .lab-footer .mdl-mega-footer--middle-section::after {
+    border-bottom: none;
+  }
+
+  .lab-footer .mdl-mega-footer--bottom-section {
+    position: relative;
+  }
+
+  .lab-footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+  }
+
+  .lab-footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+.lab-link-menu:hover {
+  cursor: pointer;
+}
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .lab-navigation-container {
+    display: none;
+  }
+
+  .lab-title {
+    display: none !important;
+  }
+
+  .lab-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+     consecutive "+" operators in some cases. Therefore, we need to use both
+     here to cover all the bases. */
+  .lab.lab-search-box.is-focused ~ .lab-mobile-title,
+  .lab-search-box.is-focused + .lab-navigation-container + .lab-mobile-title {
+    opacity: 0;
+  }
+
+  .lab-more-button {
+    display: none;
+  }
+
+  .lab-search-box.is-focused {
+    width: calc(100% - 48px);
+  }
+
+  .lab-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+
+  .lab-be-together-section {
+    height: 350px;
+  }
+
+  .lab-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 24px;
+  }
+
+  .lab-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+  }
+
+  .lab-create-character {
+    padding-top: 200px;
+    font-size: 16px;
+  }
+
+  .lab-create-character img {
+    height: 12px;
+  }
+
+  .lab-fab {
+    display: none;
+  }
+
+  .lab-wear-band-text {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .lab-footer .mdl-mega-footer--bottom-section {
+    display: none;
+  }
+}
