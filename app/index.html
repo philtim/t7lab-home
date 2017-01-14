@@ -6,25 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>T7Lab - crafting experiences</title>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png"/>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik:500" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- build:css styles/vendor.css -->
     <!-- build:css node_modules/material-design-lite/material.min.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css" />
+    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css"/>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -40,7 +41,8 @@
   </head>
   <body>
     <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+      href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
@@ -50,15 +52,17 @@
           <span class="lab-title mdl-layout-title">
             <a href="#home"><img class="lab-logo-image" src="images/logo.png"></a>
           </span>
+          <span class="lab-mobile-title logo-font">T7Lab</span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="lab-header-spacer mdl-layout-spacer"></div>
           <!-- Navigation -->
           <div class="lab-navigation-container">
             <nav class="lab-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#services">What we do</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Our Process</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About us</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Contact</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#process">Our Process</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#partners">Partners</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#about">About us</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#contact">Contact</a>
             </nav>
           </div>
         </div>
@@ -70,9 +74,10 @@
         </span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="#services">What we do</a>
-          <a class="mdl-navigation__link" href="">Our Process</a>
-          <a class="mdl-navigation__link" href="">About us</a>
-          <a class="mdl-navigation__link" href="">Contact</a>
+          <a class="mdl-navigation__link" href="#process">Our Process</a>
+          <a class="mdl-navigation__link" href="#partners">Partners</a>
+          <a class="mdl-navigation__link" href="#about">About us</a>
+          <a class="mdl-navigation__link" href="#contact">Contact</a>
           <div class="lab-drawer-separator"></div>
           <a class="mdl-navigation__link" href="">Impressum</a>
           <div class="lab-drawer-separator"></div>
@@ -83,7 +88,7 @@
       <main class="mdl-layout__content" id="mainContainer">
 
         <!-- SECTION HI WE ARE-->
-        <div class="lab-be-together-section">
+        <div class="lab-home-section">
           <div class="lab-claim-container mdl-typography--text">
             <h1 class="logo-font lab-sub-slogan">Hi. We are <span>T7Lab</span></h1>
             <div class="logo-font lab-sub-slogan">We <span id="wordChanger" class="hidden">design</span></div>
@@ -91,108 +96,255 @@
           </div>
         </div>
 
-        <section class="lab-screen-section">
+        <!-- SECTION SERVICES-->
+        <section class="lab-services-section">
           <a name="services"></a>
-          <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-center">What we do</h2>
-            <p>T7Lab is a strategic partner for developing digital services and products with a strong focus on user experience. We make your ideas come alive as digital solutions that are spot on and tailored towards your customers.</p>
-
-
           <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><h3 class="mdl-typography--title">Consulting & Research</h3>
-              <p>Need to improve your existing product or have to build a brand new service from scratch? We will walk in the shoes of your customers, discover their motivations and behaviours, and create clarity out of disorder.</p>
+            <div class="mdl-cell--4-col mdl-cell--12-col-tablet">
+              <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-header--section">What we do</h2>
             </div>
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><h3 class="mdl-typography--title">Design & Prototyping</h3>
-              <p>Have an idea you want to further develop without going all the way to functional product, yet? We build concepts and functional prototypes which form the basis for further decisions and directions.</p>
+            <div class="mdl-cell--8-col mdl-cell--12-col-tablet">
+              <p>T7Lab is a strategic partner for developing digital services and products with a strong focus on user
+                 experience. Together with our clients and partners we craft digital solutions that are spot on and
+                 tailored towards your customers.</p>
             </div>
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><h3 class="mdl-typography--title">Delivery</h3>
-              <p>We either fully build your digital product, or we support your existing development team on the front-end side.</p>
+          </div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><h3 class="mdl-typography--title">Consulting &
+                                                                                                            Research</h3>
+              <p>Need to improve your existing product or have to build a brand new service from scratch? We will walk
+                 in the shoes of your customers, discover their motivations and behaviours, and create clarity out of
+                 disorder.</p>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><h3 class="mdl-typography--title">Design &
+                                                                                                            Prototyping</h3>
+              <p>Have an idea you want to further develop without going all the way to functional product, yet? We build
+                 concepts and functional prototypes which form the basis for further decisions and directions.</p>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><h3 class="mdl-typography--title">
+              Development</h3>
+              <p>We either fully build your digital product, or we support your existing development team on the
+                 front-end side.</p>
             </div>
           </div>
 
+
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+              <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h3 class="mdl-card__title-text">Consulting & Research</h3>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  Need to improve your existing product or have to build a brand new service from scratch? We will walk
+                  in the shoes of your customers, discover their motivations and behaviours, and create clarity out of
+                  disorder.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <div class="mdl-card__supporting-text--footer">
+                    We do: Contextual Inquiry, Interviews, Domain Research, Strategic Roadmaps
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+              <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h3 class="mdl-card__title-text">Design & Prototyping</h3>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  Have an idea you want to further develop without going all the way to functional product, yet? We build
+                  concepts and functional prototypes which form the basis for further decisions and directions.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <div class="mdl-card__supporting-text--footer">
+                    We create: {Personas, Scenarios and Use Cases, Storyboarding, User Journey, Wireframes, MVP}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+              <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h3 class="mdl-card__title-text">Development</h3>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  We either fully build your digital product, or we support your existing development team on the
+                  front-end side.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <div class="mdl-card__supporting-text--footer">
+                    Part of what we use: HTML5, CSS3, BEM, SMACCS Javascript, NodeJs, Angular, React, jQuery, Git, Continuous Integration an Deployment
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
         </section>
 
-
-
+        <!-- SECTION PROCESS-->
         <section class="lab-process-section">
           <a name="process"></a>
-          <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-center">How we could assist you</h2>
-          <p>Bringing together multiple disciplines, we excel at the intersection of business needs, design, and development. Though we are able to support you from start to finish, we like to see ourselves as a partner along your journey and support you wherever it is most effective. Whether that be development only, supporting you during design & prototyping phase, or right at project kick-off with ideation & research.</p>
+          <div class="mdl-grid">
+            <div class="mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--order-8-desktop">
+              <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-header--section">How we could
+                                                                                                        assist you</h2>
+            </div>
+            <div class="mdl-cell--8-col mdl-cell--12col-tablet">
+              <p>Bringing together multiple disciplines, we excel at the intersection of business needs, design, and
+                 development. Though we are able to support you from start to finish, we like to see ourselves as a
+                 partner along your journey and support you wherever it is most effective. Whether that be development
+                 only, supporting you during design & prototyping phase, or right at project kick-off with ideation &
+                 research.</p>
+            </div>
+          </div>
+
+          <div class="illustration">
+            <img src="images/process.png" alt="">
+          </div>
         </section>
 
-
+        <!-- SECTION PARTNERS-->
         <section class="lab-clients-section">
-          <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-center">Our Partners and Clients</h2>
-          <ul class="mdl-grid mdl-grid--dark">
-            <li class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet">logo</li>
-            <li class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet">logo</li>
-            <li class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet">logo</li>
-            <li class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet">logo</li>
-            <li class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet">logo</li>
-            <li class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet">logo</li>
-          </ul>
+          <a name="partners"></a>
+          <div class="mdl-grid">
+            <div class="mdl-cell--4-col mdl-cell--12-col-tablet">
+              <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-header--section">Selected
+                                                                                                        Partners and
+                                                                                                        Clients</h2>
+            </div>
+            <div class="mdl-cell--8-col mdl-cell--12-col-tablet">
+              <ul class="mdl-grid mdl-grid--dark logo-wrapper">
+                <li class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet"><img
+                  src="./images/partners/logo_intuity.png" alt=""></li>
+                <li class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet"><img src="./images/partners/logo_benz.png"
+                                                                                  alt=""></li>
+              </ul>
+              <ul class="mdl-grid mdl-grid--dark logo-wrapper">
+                <li class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><img
+                  src="./images/partners/logo_fischer.png" alt=""></li>
+                <li class="mdl-cell mdl-cell--8-col mdl-cell--12-col-tablet"><img
+                  src="./images/partners/logo_adrionTransporte.png" alt=""></li>
+              </ul>
+            </div>
+          </div>
         </section>
 
-
-
+        <!-- SECTION ABOUT-->
         <section class="lab-about-section">
           <a name="about"></a>
-          <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-center">About T7Lab</h2>
-          <p>We focus on business analysis, user research, and development. We connect our clients to their customers. No matter the technology. No matter the platform. We belief that carefully designed experiences can improve our world.</p>
-          <h3 class="mdl-typography--title">Our Principles</h3>
           <div class="mdl-grid">
-            <ul>
-              <li>
-                <h5 class="mdl-typography--title">Be playful</h5>
-                <p>We try out new things, whether that be topics like Internet of Things, Industrie 4.0, Smart Living, the latest javascript frameworks, or trying out new ways of collaboration and working remotely. Our playful nature combined with our lab like environment is what keeps us excited and enables us to deliver outstanding solutions with our partners.</p>
-              </li>
-              <li>
-                <h5 class="mdl-typography--title">Be empathetic</h5>
-                <p>It just doesn’t make sense to consult or build products for customers we don’t know. We strive to understand our clients and their customers thoroughly. We want to feel their paint points. Empathy is what enables us to design solutions for real problems.
-                </p>
-              </li>
-              <li>
-                <h5 class="mdl-typography--title">Be curious</h5>
-                <p>Never take status quo for granted. Think differently, question current workflows, try out new stuff, never stand still.
-                </p>
-              </li>
-              <li>
-                <h5 class="mdl-typography--title">Be courageous</h5>
-                <p>Speak out if things are not working as expected. Speak out if things could be improved. Speak out if your gut feeling tells you so. Don’t shy away from difficult circumstances. Together we will find solutions for almost everything.</p>
-              </li>
-              <li>
-                <h5 class="mdl-typography--title">Be honest</h5>
-                <p>Always, whether that be about telling a client where she is wrong, or if you messed things up. We are allowed to fail. Because failure helps to learn.
-                </p>
-              </li>
-              <li>
-                <h5 class="mdl-typography--title">Be prepared</h5>
-                <p>In this fast moving world we have to be prepared for continuous change and adapt quickly. New technologies won’t overwhelm us, rather we embrace them and think of useful applications. </p>
-              </li>
-              <li>
-                <h5 class="mdl-typography--title">Be friendly</h5>
-                <p>Towards our clients, our co-workers, our company, our family.</p>
-              </li>
-            </ul>
+            <div class="mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--order-9">
+              <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-header--section">About T7Lab</h2>
+            </div>
+            <div class="mdl-cell--8-col mdl-cell--12-col-tablet">
+              <p>Here at T7Lab e belief that carefully designed experiences can improve our world. We also belief that...</p>
+            </div>
+          </div>
+
+          <div class="mdl-grid">
+            <ul class="mdl-cell--12-col">
+            <li>
+              <h5 class="mdl-typography--title">Be playful</h5>
+              <p>We try out new things, whether that be topics like Internet of Things, Industrie 4.0, Smart Living,
+                 the latest javascript frameworks, or trying out new ways of collaboration and working remotely. Our
+                 playful nature combined with our lab like environment is what keeps us excited and enables us to
+                 deliver outstanding solutions with our partners.</p>
+            </li>
+            <li>
+              <h5 class="mdl-typography--title">Be empathetic</h5>
+              <p>It just doesn’t make sense to consult or build products for customers we don’t know. We strive to
+                 understand our clients and their customers thoroughly. We want to feel their paint points. Empathy is
+                 what enables us to design solutions for real problems.
+              </p>
+            </li>
+            <li>
+              <h5 class="mdl-typography--title">Be curious</h5>
+              <p>Never take status quo for granted. Think differently, question current workflows, try out new stuff,
+                 never stand still.
+              </p>
+            </li>
+            <li>
+              <h5 class="mdl-typography--title">Be courageous</h5>
+              <p>Speak out if things are not working as expected. Speak out if things could be improved. Speak out if
+                 your gut feeling tells you so. Don’t shy away from difficult circumstances. Together we will find
+                 solutions for almost everything.</p>
+            </li>
+            <li>
+              <h5 class="mdl-typography--title">Be honest</h5>
+              <p>Always, whether that be about telling a client where she is wrong, or if you messed things up. We are
+                 allowed to fail. Because failure helps to learn.
+              </p>
+            </li>
+            <li>
+              <h5 class="mdl-typography--title">Be prepared</h5>
+              <p>In this fast moving world we have to be prepared for continuous change and adapt quickly. New
+                 technologies won’t overwhelm us, rather we embrace them and think of useful applications. </p>
+            </li>
+            <li>
+              <h5 class="mdl-typography--title">Be friendly</h5>
+              <p>Towards our clients, our co-workers, our company, our family.</p>
+            </li>
+          </ul>
           </div>
         </section>
 
-
-
-
+        <!-- SECTION CONTACT-->
         <section class="lab-contact-section">
           <a name="contact"></a>
-          <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-center">Let's build something amazing together</h2>
           <div class="mdl-grid">
-            <div class="mdl-cell--8-col mdl-cell--12-col-tablet">Looking to build a new digital product or service, migrating to the latest technology stack, or looking to improve your customer’s online experience?</div>
-            <div class="mdl-cell--4-col mdl-cell--12-col-tablet">Contact</div>
+            <div class="mdl-cell--5-col mdl-cell--12-col-tablet">
+              <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-header--section">Let's build
+                                                                                                        something
+                                                                                                        amazing
+                                                                                                        together</h2>
+            </div>
+            <div class="mdl-cell--7-col mdl-cell--12-col-tablet">
+              <p>Looking to build a new digital product or service, migrating to the latest technology stack, or looking
+                 to improve your customer’s online experience?</p>
+            </div>
           </div>
+          <form action="#" class="">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded"
+                 data-upgraded=",MaterialTextfield">
+              <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name">
+              <label class="mdl-textfield__label" for="Name">Name...</label>
+              <span class="mdl-textfield__error">Letters and spaces only</span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded"
+                 data-upgraded=",MaterialTextfield">
+              <input class="mdl-textfield__input" type="text" id="Email">
+              <label class="mdl-textfield__label" for="Email">Email...</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded"
+                 data-upgraded=",MaterialTextfield">
+              <textarea class="mdl-textfield__input" type="text" rows="5" id="note"></textarea>
+              <label class="mdl-textfield__label" for="note">Enter note</label>
+            </div>
+            <p>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                      type="submit" data-upgraded=",MaterialButton,MaterialRipple">
+                Submit
+                <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+            </p>
+          </form>
         </section>
 
 
-
-        <footer class="mdl-mini-footer">
+        <footer class="lab-footer mdl-mini-footer">
           <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo">Title</div>
+            <div class="mdl-logo"><img class="lab-logo-image" src="images/logo-white.png"></div>
             <ul class="mdl-mini-footer__link-list">
               <li><a href="#">Help</a></li>
               <li><a href="#">Privacy & Terms</a></li>
