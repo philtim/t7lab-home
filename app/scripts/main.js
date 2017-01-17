@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  'use strict';
+
   $(function () {
     let mainContainer = $('#mainContainer');
 
@@ -26,6 +28,5 @@ $(document).ready(function () {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
   }
-
 
 });

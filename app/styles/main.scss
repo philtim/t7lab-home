@@ -1,18 +1,30 @@
 @import "fonts";
+
 $primary-color: #6ab344;
 
 .illustration {
- text-align: center;
- img,
- svg  {
-   height: auto;
-   width: 60vw;
- }
+  text-align: center;
+  img,
+  svg {
+    height: auto;
+    width: 60vw;
+  }
 }
+
+a {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mdl-textfield {
+  width: 100%;
+}
+
 
 .mdl-card__supporting-text {
   &--footer {
-    color: rgba(0,0,0,.54);
+    color: rgba(0, 0, 0, .54);
     font-size: 1rem;
     line-height: 18px;
     overflow: hidden;
@@ -21,12 +33,12 @@ $primary-color: #6ab344;
   }
 }
 
-
 body {
   font-family: "Roboto", "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.04em;
+  color: #404040;
 
   p {
     font-size: 16px;
@@ -44,7 +56,7 @@ body {
 .mdl-typography--text-header--section {
   color: $primary-color;
   font-size: 4rem;
-  font-family: 'Rubik', 'Roboto','Helvetica','Arial', sans-serif;
+  font-family: 'Rubik', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   opacity: .75;
   margin-top: 0;
   line-height: 0.8;
@@ -73,7 +85,7 @@ body {
 section {
   max-width: 80%;
   margin: 0 auto;
-  padding: 0 0 180px 0;
+  padding: 0 0 120px 0;
 }
 
 .hidden {
@@ -113,8 +125,35 @@ a img {
   background-color: transparent;
 }
 
+.lab-mini-footer__section {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+
+  .info {
+    color: white;
+    margin-top: 10px;
+
+    span {
+      margin: 0 5px;
+    }
+  }
+
+  .link-list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0;
+    }
+  }
+}
+
 .lab-header .material-icons {
-  color: $primary-color !important;
+  color: #767777 !important;
 }
 
 .lab-header .mdl-layout__drawer-button {
@@ -494,7 +533,6 @@ a img {
   }
 }
 
-
 .lab-link-menu:hover {
   cursor: pointer;
 }
@@ -503,6 +541,24 @@ a img {
 @media (max-width: 900px) {
   section {
     max-width: 95%;
+  }
+
+  .lab-claim-container {
+    padding: 3vw 3vh;
+    margin-top: 0;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .illustration {
+    text-align: center;
+    img,
+    svg {
+      height: auto;
+      width: 90vw;
+    }
   }
 
   .mdl-typography--text-header--section {
@@ -517,11 +573,6 @@ a img {
     display: none !important;
   }
 
-  .lab-claim-container {
-    padding: 3vw 3vh;
-    margin-top: 5vh;
-  }
-
   .lab-sub-slogan {
     font-size: 10vw;
     line-height: 1.4;
@@ -531,12 +582,13 @@ a img {
   .lab-mobile-title {
     display: block !important;
     position: absolute;
-    left: calc(50% - 70px);
+    left: calc(50% - 50px);
     top: 15px;
     color: $primary-color;
     font-size: 2rem;
     line-height: 1;
     text-align: center;
+    width: 100px;
   }
 
   .lab.lab-search-box.is-focused ~ .lab-mobile-title,
@@ -550,32 +602,14 @@ a img {
 
 }
 
-
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  /* Styles */
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-  /* Styles */
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-  /* Styles */
-}
-
-/* iPhone 6 ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-
-  .lab-sub-slogan {
+@media only screen and (max-width: 736px) {
+  .lab-claim-container {
+    padding: 3vw 3vh;
+    margin-top: 5vh;
   }
-
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-device-width: 375px) and (max-device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
   .lab-sub-slogan {
     font-size: 10vw;
   }
