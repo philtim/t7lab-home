@@ -73,9 +73,9 @@
         <!-- SECTION HI WE ARE-->
         <header class="lab-home-section">
           <div class="lab-claim-container mdl-typography--text">
-            <h1 class="logo-font lab-sub-slogan">Hi. We are <span>T7Lab</span></h1>
+            <h1 class="logo-font lab-sub-slogan">Hi. We are <span>T7Lab.</span></h1>
             <div class="logo-font lab-sub-slogan">We <span id="wordChanger" class="hidden">design</span></div>
-            <div class="logo-font lab-sub-slogan"><span>digital</span> services & products</div>
+            <div class="logo-font lab-sub-slogan"><span>digital</span> services & products.</div>
           </div>
         </header>
 
@@ -253,18 +253,19 @@
           </div>
 
           <div class="mdl-grid">
-            <form action="form-to-email.php" method="post" class="mdl-cell--12-col">
+            <div id="form-messages"></div>
+            <form action="form-to-email.php" method="post" class="mdl-cell--12-col" id="contact-form">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded">
-                <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name">
+                <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name" name="name">
                 <label class="mdl-textfield__label" for="Name">Name...</label>
                 <span class="mdl-textfield__error">Letters and spaces only</span>
               </div>
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded">
-                <input class="mdl-textfield__input" type="text" id="Email">
+                <input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="Email" name="email">
                 <label class="mdl-textfield__label" for="Email">Email...</label>
               </div>
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded">
-                <textarea class="mdl-textfield__input" type="text" rows="5" id="note"></textarea>
+                <textarea class="mdl-textfield__input" type="text" rows="5" id="note" name="note"></textarea>
                 <label class="mdl-textfield__label" for="note">Enter note</label>
               </div>
               <p>
