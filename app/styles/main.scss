@@ -1,24 +1,13 @@
 @import "fonts";
 $primary-color: #6ab344;
 
-.demo-card-square.mdl-card {
-  width: 100%;
-  height: auto;
-}
-.demo-card-square > .mdl-card__title {
-  color: #fff;
-  background:
-    url('../images/ic_lightbulb_outline_white_24px.svg') top right 15% no-repeat #46B6AC;
-  height: 100px;
-}
-
 .illustration {
-  text-align: center;
-  img,
-  svg  {
-    max-height: 70vh;
-    width: auto;
-  }
+ text-align: center;
+ img,
+ svg  {
+   height: auto;
+   width: 60vw;
+ }
 }
 
 .mdl-card__supporting-text {
