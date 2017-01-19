@@ -2,8 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e022b1c7-aeab-4202-8dba-912b248c207c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon-114x114.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon-120x120.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon-152x152.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon-180x180.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon-57x57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon-72x72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon-76x76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/apple-touch-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/form-to-email.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/bg01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/bg02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/bg03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/logo-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/logo_t7lab.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/logo_t7lab_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/logo_t7lab_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/partners/logo_adriontransporte.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/partners/logo_benz.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/partners/logo_bonasera.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/partners/logo_fischer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/partners/logo_intuity.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/partners/logo_mercedes.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/partners/logo_sv.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/process.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/vendiagramm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/impressum.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/main.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/styles/main.css" afterPath="$PROJECT_DIR$/.tmp/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.scss" afterPath="$PROJECT_DIR$/app/styles/main.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,26 +53,26 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+            <state relative-caret-position="228">
+              <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
               <folding>
-                <element signature="e#11301#11308#0" expanded="true" />
-                <element signature="e#11390#11397#0" expanded="true" />
-                <marker date="1484837292000" expanded="true" signature="1667:1822" ph="..." />
-                <marker date="1484837292000" expanded="true" signature="1729:1790" ph="..." />
+                <element signature="e#11639#11646#0" expanded="true" />
+                <element signature="e#11728#11735#0" expanded="true" />
+                <marker date="1484855850000" expanded="true" signature="1667:1822" ph="..." />
+                <marker date="1484855850000" expanded="true" signature="1729:1790" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="150" column="21" lean-forward="false" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
+            <state relative-caret-position="480">
+              <caret line="109" column="23" lean-forward="false" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -57,17 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lab-drawer .lab-</find>
-      <find>what we do</find>
-      <find>illu</find>
-      <find>build some</find>
-      <find>fischer</find>
-      <find>logo.pn</find>
-      <find>-white</find>
-      <find>logo-</find>
-      <find>href</find>
-      <find>header</find>
-      <find>logo_</find>
       <find>ven</find>
       <find>logo</find>
       <find>vh</find>
@@ -77,7 +101,6 @@
       <find>h2</find>
       <find>body</find>
       <find>impres</find>
-      <find>900</find>
       <find>person</find>
       <find>180</find>
       <find>erro</find>
@@ -87,6 +110,18 @@
       <find>footer</find>
       <find>layout__content</find>
       <find>100</find>
+      <find>section-an</find>
+      <find>mdl-layout__drawer-button</find>
+      <find>1024</find>
+      <find>102</find>
+      <find>max-wid</find>
+      <find>900</find>
+      <find>svg</find>
+      <find>lab-title</find>
+      <find>margin-top: 1</find>
+      <find>margin-bo</find>
+      <find>lab-home-se</find>
+      <find>section</find>
     </findStrings>
     <replaceStrings>
       <replace>lab</replace>
@@ -108,8 +143,8 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
         <option value="$PROJECT_DIR$/app/form-to-email.php" />
         <option value="$PROJECT_DIR$/app/scripts/main.js" />
-        <option value="$PROJECT_DIR$/app/styles/main.scss" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/styles/main.scss" />
       </list>
     </option>
   </component>
@@ -194,8 +229,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1026" />
+    <option name="width" value="1440" />
+    <option name="height" value="846" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -509,15 +544,15 @@
       <workItem from="1484664568150" duration="281000" />
       <workItem from="1484681307994" duration="7687000" />
       <workItem from="1484732098503" duration="19000" />
-      <workItem from="1484833325706" duration="4064000" />
+      <workItem from="1484833325706" duration="8175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64359000" />
+    <option name="totallyTimeSpent" value="68470000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1026" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="846" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -527,7 +562,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2353362" sideWeight="0.3548922" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24440895" sideWeight="0.6451078" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32832617" sideWeight="0.6451078" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -559,10 +594,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11301#11308#0" expanded="true" />
-            <element signature="e#11390#11397#0" expanded="true" />
-            <marker date="1484837292000" expanded="true" signature="1667:1822" ph="..." />
-            <marker date="1484837292000" expanded="true" signature="1729:1790" ph="..." />
+            <element signature="e#11639#11646#0" expanded="true" />
+            <element signature="e#11728#11735#0" expanded="true" />
+            <marker date="1484855850000" expanded="true" signature="1667:1822" ph="..." />
+            <marker date="1484855850000" expanded="true" signature="1729:1790" ph="..." />
           </folding>
         </state>
       </provider>
@@ -588,10 +623,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11301#11308#0" expanded="true" />
-            <element signature="e#11390#11397#0" expanded="true" />
-            <marker date="1484837292000" expanded="true" signature="1667:1822" ph="..." />
-            <marker date="1484837292000" expanded="true" signature="1729:1790" ph="..." />
+            <element signature="e#11639#11646#0" expanded="true" />
+            <element signature="e#11728#11735#0" expanded="true" />
+            <marker date="1484855850000" expanded="true" signature="1667:1822" ph="..." />
+            <marker date="1484855850000" expanded="true" signature="1729:1790" ph="..." />
           </folding>
         </state>
       </provider>
@@ -633,10 +668,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11301#11308#0" expanded="true" />
-            <element signature="e#11390#11397#0" expanded="true" />
-            <marker date="1484837292000" expanded="true" signature="1667:1822" ph="..." />
-            <marker date="1484837292000" expanded="true" signature="1729:1790" ph="..." />
+            <element signature="e#11639#11646#0" expanded="true" />
+            <element signature="e#11728#11735#0" expanded="true" />
+            <marker date="1484855850000" expanded="true" signature="1667:1822" ph="..." />
+            <marker date="1484855850000" expanded="true" signature="1729:1790" ph="..." />
           </folding>
         </state>
       </provider>
@@ -646,10 +681,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11301#11308#0" expanded="true" />
-            <element signature="e#11390#11397#0" expanded="true" />
-            <marker date="1484837292000" expanded="true" signature="1667:1822" ph="..." />
-            <marker date="1484837292000" expanded="true" signature="1729:1790" ph="..." />
+            <element signature="e#11639#11646#0" expanded="true" />
+            <element signature="e#11728#11735#0" expanded="true" />
+            <marker date="1484855850000" expanded="true" signature="1667:1822" ph="..." />
+            <marker date="1484855850000" expanded="true" signature="1729:1790" ph="..." />
           </folding>
         </state>
       </provider>
@@ -674,10 +709,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11301#11308#0" expanded="true" />
-            <element signature="e#11390#11397#0" expanded="true" />
-            <marker date="1484837292000" expanded="true" signature="1667:1822" ph="..." />
-            <marker date="1484837292000" expanded="true" signature="1729:1790" ph="..." />
+            <element signature="e#11639#11646#0" expanded="true" />
+            <element signature="e#11728#11735#0" expanded="true" />
+            <marker date="1484855850000" expanded="true" signature="1667:1822" ph="..." />
+            <marker date="1484855850000" expanded="true" signature="1729:1790" ph="..." />
           </folding>
         </state>
       </provider>
@@ -763,24 +798,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="150" column="21" lean-forward="false" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="228">
+          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding>
+            <element signature="e#11639#11646#0" expanded="true" />
+            <element signature="e#11728#11735#0" expanded="true" />
+            <marker date="1484855850000" expanded="true" signature="1667:1822" ph="..." />
+            <marker date="1484855850000" expanded="true" signature="1729:1790" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
-          <folding>
-            <element signature="e#11301#11308#0" expanded="true" />
-            <element signature="e#11390#11397#0" expanded="true" />
-            <marker date="1484837292000" expanded="true" signature="1667:1822" ph="..." />
-            <marker date="1484837292000" expanded="true" signature="1729:1790" ph="..." />
-          </folding>
+        <state relative-caret-position="480">
+          <caret line="109" column="23" lean-forward="false" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

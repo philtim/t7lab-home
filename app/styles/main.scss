@@ -58,6 +58,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.04em;
   color: #404040;
+  padding-top: 56px;
 
   p {
     font-size: 16px;
@@ -104,8 +105,20 @@ body {
 section {
   max-width: 80%;
   margin: 0 auto;
-  padding: 0 0 120px 0;
+
+  &.lab-contact-section {
+    margin-bottom: 50px;
+  }
+
+  a.anchor {
+    display: block;
+    position: relative;
+    visibility: hidden;
+    height: 100px;
+  }
 }
+
+
 
 .hidden {
   opacity: 0;
@@ -134,6 +147,10 @@ a img {
   display: none !important;
 }
 
+.mdl-layout__drawer.is-visible {
+  position: fixed;
+}
+
 .lab-logo-image {
   height: 40px;
   width: auto;
@@ -149,10 +166,6 @@ a img {
 
 .mdl-layout__container {
   position: relative;
-}
-
-.mdl-layout__content {
-  padding-top: 56px;
 }
 
 .lab-mini-footer__section {
@@ -259,11 +272,10 @@ a img {
 
 .lab-home-section {
   position: relative;
-  height: 90vh;
+  height: 94vh;
   width: auto;
   background: white url('../images/bg01.jpg') center center no-repeat;
   background-size: cover;
-  margin-bottom: 100px;
 }
 
 .lab-about-section {
@@ -568,10 +580,28 @@ a img {
   cursor: pointer;
 }
 
+.lab-title.mdl-layout-title svg {
+  margin-top: 10px;
+}
+
 /**** Mobile layout ****/
 @media (max-width: 900px) {
+  .lab-home-section {
+    height: 560px;
+    margin-bottom: 50px;
+  }
+
   section {
     max-width: 95%;
+    margin: 0 auto;
+    padding: 0 0 50px 0;
+
+    a.anchor {
+      display: block;
+      position: relative;
+      visibility: hidden;
+      height: 50px;
+    }
   }
 
   .lab-claim-container {
@@ -627,10 +657,6 @@ a img {
     opacity: 0;
   }
 
-  .lab-home-section {
-    height: 560px;
-  }
-
 }
 
 @media only screen and (max-width: 736px) {
@@ -646,3 +672,8 @@ a img {
   }
 }
 
+@media screen and (min-width: 901px) {
+  .mdl-layout__header .mdl-layout__drawer-button {
+    display: none;
+  }
+}
