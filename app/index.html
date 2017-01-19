@@ -35,7 +35,7 @@
       <div class="lab-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="lab-title mdl-layout-title">
-            <a href="#home"><img class="lab-logo-image" src="images/logo_t7lab.png" alt="T7Lab logo" width="100" height="91"></a>
+            <a href="#home"><img class="lab-logo-image" src="images/logo_t7lab.png" alt="T7Lab logo" width="44" height="40"></a>
           </span>
           <span class="lab-mobile-title logo-font">T7Lab</span>
           <!-- Add spacer, to align navigation to the right in desktop -->
@@ -308,8 +308,8 @@
       ga('create', 'UA-48446437-3', 'auto');
       ga('send', 'pageview');
       setTimeout(function () {
-        _gaq.push(['_trackEvent', 'Control', 'Bounce Rate', ''])
-      }, 30000)
+        ga('send', 'event', 'Bounce Rate', 'Time on page more than 30 seconds')
+      }, 30000);
     </script>
 
     <!-- Hotjar Tracking Code for www.t7lab.com -->
