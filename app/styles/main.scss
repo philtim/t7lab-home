@@ -21,6 +21,25 @@ a {
   width: 100%;
 }
 
+.msg-box {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 15px 0;
+
+  &.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border: 2px solid #d6e9c6;
+  }
+
+  &.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 2px solid #ebccd1;
+  }
+}
+
 
 .mdl-card__supporting-text {
   &--footer {
@@ -92,11 +111,6 @@ section {
   opacity: 0;
 }
 
-.success {
-  color: $primary-color;
-  font-size: 16px;
-}
-
 a img {
   border: 0;
 }
@@ -127,7 +141,18 @@ a img {
 
 .lab-header {
   overflow: visible;
-  background-color: transparent;
+  background-color: white;
+  display: block;
+  position: fixed;
+  top: 0;
+}
+
+.mdl-layout__container {
+  position: relative;
+}
+
+.mdl-layout__content {
+  padding-top: 56px;
 }
 
 .lab-mini-footer__section {
@@ -142,6 +167,7 @@ a img {
 
     span {
       margin: 0 5px;
+      font-weight: normal;
     }
   }
 

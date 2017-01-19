@@ -2,7 +2,7 @@ $(document).ready(function () {
   'use strict';
 
   $(function () {
-    const words = ['design', 'skillfully craft', 'beautify', 'prototype'];
+    const words = ['design', 'develop', 'consult on'];
     $('#wordChanger').addClass('hidden').fadeOut(800, function () {
       $(this).html(words[getRandomInt(0, words.length)]).removeClass('hidden').fadeIn(800);
     })
@@ -34,7 +34,7 @@ $(document).ready(function () {
         data: formData
       }).done(function (response) {
         // Set the message text.
-        $(formMessages).text(response);
+        $(formMessages).text(response).removeClass('error').addClass('success');
         $(form).addClass('hidden');
 
         // Clear the form.
@@ -42,7 +42,7 @@ $(document).ready(function () {
         $('#Email').val('');
         $('#note').val('');
       }).fail(function (data) {
-        $(formMessages).text(data);
+        $(formMessages).text(data.responseText).addClass('error');
       })
     });
   });

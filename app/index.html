@@ -2,8 +2,8 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="T7Lab is a strategic partner for designing and developing digital services and products with a strong focus on user experience.">
-    <meta name="keywords" content="web development, prototyping, user experience, concept, interaction design, strategy">
+    <meta name="description" content="T7Lab is a strategic partner for designing and developing digital services and products with a strong focus on user experience, strategy, and development.">
+    <meta name="keywords" content="web development, prototyping, user experience, concept, interaction design, strategy, ux, user experience, timmalog">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>T7Lab - crafting digital services and products</title>
 
@@ -101,17 +101,17 @@
                                                                                                             Research</h3>
               <p>Need to improve your existing product or have to build a brand new service from scratch? We will walk
                  in the shoes of your customers, discover their motivations and behaviours, and create clarity out of
-                 disorder.<br /> <i>We do: Contextual Inquiry, Interviews, Domain Research, Strategic Roadmaps.</i></p>
+                 disorder.<br /> <i>We do: Contextual Inquiry, Interviews, Domain Research, Strategic Roadmaps, Minimum Valuable Service (MVS).</i></p>
             </div>
             <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><h3 class="mdl-typography--title">Design &
                                                                                                             Prototyping</h3>
               <p>Have an idea you want to further develop without going all the way to functional product, yet?<br /> <i>We build
-                 concepts and functional prototypes which form the basis for further decisions and directions. We design: Personas, Scenarios, Use Cases, Storyboards, User Journey, Wireframes, Minimal Viable Products (MVP).</i></p>
+                 concepts and functional prototypes which form the basis for further decisions and directions. We design: Personas, Scenarios, Use Cases, Storyboards, Information Architecture, User Journey, Wireframes, Minimum Viable Products (MVP).</i></p>
             </div>
             <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet"><h3 class="mdl-typography--title">
               Development</h3>
               <p>We either build your digital product start to finish, or we support your existing development team on the
-                 front-end side.<br /> <i>Part of our technology stack includes: HTML5, CSS3, BEM, SMACCS, Webpack, JavaScript, TypeScript, Node.Js, Angular, React, jQuery, Git, Continuous Integration, Continuous Development.</i></p>
+                 front-end side.<br /> <i>Part of our tech stack: HTML5, CSS3, BEM, SMACCS, Webpack, JavaScript, TypeScript, Node.Js, AngularJs, React, jQuery, Frontend architecture, Git, Continuous Integration & Deployment.</i></p>
             </div>
           </div>
 
@@ -179,8 +179,9 @@
               <h2 class="mdl-typography--display-1-color-contrast mdl-typography--text-header--section">About T7Lab</h2>
             </div>
             <div class="mdl-cell--8-col mdl-cell--12-col-tablet mdl-cell--middle">
-              <p>T7Lab was founded back in 2015 with a desire to create the perfect environment, in which all worlds &ndash;
-              daily business, lab like playground, friends, family &ndash; go seamlessly hand in hand. T7Lab longs to be a place where individuals are encouraged to think differently, play around with the latest technology, and try out new stuff all without worrying too much about profitability. Rather, we belief that our playful nature and environment, without old fashioned strict working times and working frames, will automatically benefit our partners and clients in the longer run.
+              <p>T7Lab was founded by Philipp Timmalog back in 2015 with a desire to create a creative environment in which all aspects of life &ndash; daily creative business, lab like playground, lifelong learning, friends, family &ndash; go seamlessly hand in hand. T7Lab is a place
+ where individuals are encouraged to think differently, play around with the latest technology and try out new stuff all without worrying too much about profitability. Rather, we belief that our
+ playful nature and environment without old school nine to five working days and old working models, will automatically benefit our partners, clients, and co-workers in the longer run.
               </p>
             </div>
           </div>
@@ -189,10 +190,8 @@
             <ul class="mdl-cell--12-col">
             <li>
               <h4 class="mdl-typography--title">Be playful</h4>
-              <p>We try out new things, whether that be topics like Internet of Things, Industrie 4.0, Smart Living,
-                 the latest javascript frameworks, or trying out new ways of collaboration and working remotely. Our
-                 playful nature combined with our lab like environment is what keeps us excited and enables us to
-                 deliver outstanding solutions with our partners.</p>
+              <p>We try out new things, whether that be topics like Internet of Things, Industrial Internet, Industrie 4.0, Smart Living,
+                 the latest JavaScript frameworks like AngularJs and React, or trying out new ways of collaboration and working remotely. Our playful nature combined with our lab like environment is what keeps us excited and enables us to deliver outstanding solutions with our partners.</p>
             </li>
             <li>
               <h4 class="mdl-typography--title">Be empathetic</h4>
@@ -253,7 +252,7 @@
           </div>
 
           <div class="mdl-grid">
-            <div id="form-messages"></div>
+            <div id="form-messages" class="msg-box"></div>
             <form action="form-to-email.php" method="post" class="mdl-cell--12-col" id="contact-form">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded">
                 <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name" name="name">
@@ -285,9 +284,9 @@
           </div>
           <div class="lab-mini-footer__section">
             <p class="info">
-              <span>say-hi@t7lab.com</span>
+              <a href="mailto:say-hi@t7lab.com"><span>say-hi@t7lab.com</span></a>
               <b>|</b>
-              <span>+49 171 5566829</span>
+              <a href="tel:+491715566829"><span>+49 171 5566829</span></a>
             </p>
           </div>
           <div class="lab-mini-footer__section">
@@ -308,6 +307,9 @@
 
       ga('create', 'UA-48446437-3', 'auto');
       ga('send', 'pageview');
+      setTimeout(function () {
+        _gaq.push(['_trackEvent', 'Control', 'Bounce Rate', ''])
+      }, 30000)
     </script>
 
     <!-- Hotjar Tracking Code for www.t7lab.com -->
