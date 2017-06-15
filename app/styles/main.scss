@@ -107,17 +107,10 @@ body {
 
 section {
   width: 100%;
-  margin: 0 auto;
+  margin: 100px auto;
 
   &.lab-contact-section {
     margin-bottom: 50px;
-  }
-
-  a.anchor {
-    display: block;
-    position: relative;
-    visibility: hidden;
-    height: 100px;
   }
 
   > .mdl-grid {
@@ -248,7 +241,8 @@ a img {
   border-bottom: 4px solid transparent;
 }
 
-.lab-navigation .mdl-navigation__link:hover {
+.lab-navigation .mdl-navigation__link:hover,
+.lab-navigation .mdl-navigation__link.active {
   border-bottom: 4px solid #8bc34a;
 }
 
@@ -607,14 +601,7 @@ a img {
 
   section {
     margin: 0 auto;
-    padding: 0 0 50px 0;
-
-    a.anchor {
-      display: block;
-      position: relative;
-      visibility: hidden;
-      height: 50px;
-    }
+    padding: 50px 0;
   }
 
   .lab-claim-container {
