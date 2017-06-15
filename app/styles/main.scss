@@ -75,7 +75,7 @@ body {
 
 .mdl-typography--text-header--section {
   color: $primary-color;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: 'Rubik', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   opacity: .75;
   margin-top: 0;
@@ -96,6 +96,9 @@ body {
 }
 
 .logo-wrapper {
+  li {
+    margin-bottom: 20px;
+  }
   img {
     max-width: 100%;
     height: auto;
@@ -103,7 +106,7 @@ body {
 }
 
 section {
-  max-width: 80%;
+  width: 100%;
   margin: 0 auto;
 
   &.lab-contact-section {
@@ -116,6 +119,16 @@ section {
     visibility: hidden;
     height: 100px;
   }
+
+  > .mdl-grid {
+    max-width: 1000px;
+  }
+
+  .illustration {
+      background: #F3F3F3;
+      padding: 40px 0;
+      margin: 40px 0
+    }
 }
 
 
@@ -293,6 +306,7 @@ a img {
   font-family: 'Rubik', sans-serif;
   line-height: 1;
   color: white;
+  font-weight: 500;
 
   span {
     color: $primary-color;
@@ -592,7 +606,6 @@ a img {
   }
 
   section {
-    max-width: 95%;
     margin: 0 auto;
     padding: 0 0 50px 0;
 
@@ -657,6 +670,16 @@ a img {
     opacity: 0;
   }
 
+}
+
+.content {
+  &--services {
+    i {
+      margin-top: 20px;
+      color: #9B9B9B;
+      display: inline-block;
+    }
+  }
 }
 
 @media only screen and (max-width: 736px) {
