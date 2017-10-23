@@ -14,42 +14,7 @@ $(document).ready(function () {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-
-  $(function() {
-    // Get the form.
-    let form = $('#contact-form');
-
-    // Get the messages div.
-    let formMessages = $('#form-messages');
-
-    $(form).submit(function(event) {
-      // Stop the browser from submitting the form.
-      event.preventDefault();
-
-      let formData = $(form).serialize();
-
-      $.ajax({
-        type: 'POST',
-        url: $(form).attr('action'),
-        data: formData
-      }).done(function (response) {
-        // Set the message text.
-        $(formMessages).text(response).removeClass('error').addClass('success');
-        $(form).addClass('hidden');
-
-        // Clear the form.
-        $('#Name').val('');
-        $('#Email').val('');
-        $('#note').val('');
-      }).fail(function (data) {
-        $(formMessages).text(data.responseText).addClass('error');
-      })
-    });
-  });
-
   $(document).on('scroll', onScroll);
-
-
 
   $(function () {
     var target = window.location.hash;
@@ -71,9 +36,9 @@ $(document).ready(function () {
       var $target = $(target);
 
       $('html, body').stop().animate({
-          'scrollTop': $target.offset().top - 100
+          'scrollTop': $target.offset().top - 150
       }, 500, 'swing', function () {
-          window.location.hash = target;
+          history.replaceState(null, null, target);
           $(document).on('scroll', onScroll);
       });
   });
@@ -84,7 +49,7 @@ $(document).ready(function () {
           var currLink = $(this);
           var refElement = $(currLink).attr('href');
           var $target = $(refElement);
-          if ($target.position().top <= scrollPos && $target.position().top + 100 + $target.height() > scrollPos) {
+          if ($target.position().top <= scrollPos && $target.position().top  + 150 + $target.height() > scrollPos) {
               $('.lab-navigation a').removeClass('active');
               currLink.addClass('active');
           }
