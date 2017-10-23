@@ -5,7 +5,6 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
-const styleInject = require("gulp-style-inject");
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -63,14 +62,6 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('html-inline-css-prod', () => {
-  return gulp.src('dist/index.html')
-    .pipe(styleInject({
-      path: '/dist'
-    }))
-    .pipe(gulp.dest('dist'));
-});
-
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin()))
@@ -85,6 +76,8 @@ gulp.task('fonts', () => {
 
 gulp.task('extras', () => {
   return gulp.src([
+    'app/_redirects',
+    'app/languages/**',
     'app/*',
     '!app/*.html'
   ], {
@@ -166,7 +159,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras', 'html-inline-css-prod'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
