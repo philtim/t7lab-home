@@ -88,7 +88,6 @@ gulp.task('generate:main.css', function () {
     .pipe(reload({ stream: true }));
 });
 
-
 gulp.task('scripts', () => {
   return gulp.src('src/scripts/**/*.js')
     .pipe(gulpPlugin.plumber())
