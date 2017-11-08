@@ -3,7 +3,7 @@ const gulpPlugin = require('gulp-load-plugins')();
 const browserSync = require('browser-sync');
 const del = require('del');
 const runSequence = require('run-sequence');
-const reworkNpm = require('rework-npm');
+const gzip = require('gulp-gzip');
 
 const reload = browserSync.reload;
 const pkg = require('./package.json');
@@ -146,6 +146,12 @@ gulp.task('fonts', () => {
     .pipe(gulpPlugin.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
 });
 
+gulp.task('compress', function() {
+  gulp.src(dirs.dist + '/**/*.{css,html,ico,js,svg,txt,xml}')
+    .pipe(gzip())
+    .pipe(gulp.dest(dirs.dist));
+});
+
 // ---------------------------------------------------------------------
 // | Main tasks                                                        |
 // ---------------------------------------------------------------------
@@ -155,6 +161,7 @@ gulp.task('build', function (done) {
     'generate:main.css',
     'copy',
     'minify:html',
+    'compress',
     done);
 });
 
