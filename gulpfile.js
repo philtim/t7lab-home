@@ -3,7 +3,6 @@ const gulpPlugin = require('gulp-load-plugins')();
 const browserSync = require('browser-sync');
 const del = require('del');
 const runSequence = require('run-sequence');
-const gzip = require('gulp-gzip');
 
 const reload = browserSync.reload;
 const pkg = require('./package.json');
@@ -21,7 +20,7 @@ const browserSyncOptions = {
 // ---------------------------------------------------------------------
 
 gulp.task('clean:before', function (done) {
-  del([dirs.dist]).then(function () {
+  del([dirs.dist, dirs.src + '/styles/main.css']).then(function () {
     done();
   });
 });
@@ -42,7 +41,7 @@ gulp.task('copy:images', function () {
 
 gulp.task('copy:html', function () {
   return gulp.src(dirs.src + '/index.html')
-    .pipe(gulpPlugin.replace(/{{h5bp-version}}/g, pkg.version))
+    .pipe(gulpPlugin.replace(/{{t7lab-version}}/g, pkg.version))
     .pipe(gulpPlugin.useref())
     .pipe(gulp.dest('dist'));
 });
@@ -77,15 +76,12 @@ gulp.task('generate:main.css', function () {
     .pipe(gulpPlugin.sass.sync({
       outputStyle: 'expanded',
       precision: 10,
-      includePaths: ['.', 'bower_components/material-design-lite/src/']
+      includePaths: ['.']
     }).on('error', gulpPlugin.sass.logError))
     .pipe(gulpPlugin.autoprefixer({
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
     }))
     .pipe(gulpPlugin.cssBase64())
-    .pipe(gulpPlugin.uncss({
-      html: [dirs.src + '/index.html']
-    }))
     .pipe(gulpPlugin.rename('main.css'))
     .pipe(gulp.dest(dirs.src + '/styles/'))
     .pipe(reload({ stream: true }));
@@ -147,12 +143,6 @@ gulp.task('fonts', () => {
     .pipe(gulpPlugin.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
 });
 
-gulp.task('compress', function() {
-  gulp.src(dirs.dist + '/**/*.{css,html,ico,js,svg,txt,xml}')
-    .pipe(gzip())
-    .pipe(gulp.dest(dirs.dist));
-});
-
 // ---------------------------------------------------------------------
 // | Main tasks                                                        |
 // ---------------------------------------------------------------------
@@ -162,7 +152,6 @@ gulp.task('build', function (done) {
     'generate:main.css',
     'copy',
     'minify:html',
-    'compress',
     done);
 });
 
@@ -176,7 +165,7 @@ gulp.task('serve', ['generate:main.css'], function () {
   ], reload);
 
   gulp.watch([
-    dirs.src + '/css/**/*.css',
+    dirs.src + '/styles/**/*.scss',
     dirs.src + '/img/**/*',
     '!' + dirs.src + '/css/main.css'
   ], ['generate:main.css']);
