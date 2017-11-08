@@ -82,6 +82,7 @@ gulp.task('generate:main.css', function () {
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
     }))
     .pipe(gulpPlugin.cssBase64())
+    .pipe(gulpPlugin.csso())
     .pipe(gulpPlugin.rename('main.css'))
     .pipe(gulp.dest(dirs.src + '/styles/'))
     .pipe(reload({ stream: true }));
