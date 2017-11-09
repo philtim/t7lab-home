@@ -20,7 +20,7 @@ const browserSyncOptions = {
 // ---------------------------------------------------------------------
 
 gulp.task('clean:before', function (done) {
-  del([dirs.dist, dirs.src + '/styles/main.css']).then(function () {
+  del([dirs.dist, dirs.src + '/styles/main.css', dirs.src + '/styles/renderfirst.css']).then(function () {
     done();
   });
 });
@@ -47,7 +47,7 @@ gulp.task('copy:html', function () {
 });
 
 gulp.task('copy:css', function () {
-  return gulp.src(dirs.src + '/css/main.css')
+  return gulp.src([dirs.src + '/css/main.css', dirs.src + '/css/renderfirst.css'])
     .pipe(gulp.dest(dirs.dist + '/css/'));
 });
 
@@ -84,6 +84,23 @@ gulp.task('generate:main.css', function () {
     .pipe(gulpPlugin.cssBase64())
     .pipe(gulpPlugin.csso())
     .pipe(gulpPlugin.rename('main.css'))
+    .pipe(gulp.dest(dirs.src + '/styles/'))
+    .pipe(reload({ stream: true }));
+});
+
+gulp.task('generate:renderfirst', function () {
+  return gulp.src(dirs.src + '/styles/renderfirst.scss')
+    .pipe(gulpPlugin.sass.sync({
+      outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['.']
+    }).on('error', gulpPlugin.sass.logError))
+    .pipe(gulpPlugin.autoprefixer({
+      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
+    }))
+    .pipe(gulpPlugin.cssBase64())
+    .pipe(gulpPlugin.csso())
+    .pipe(gulpPlugin.rename('renderfirst.css'))
     .pipe(gulp.dest(dirs.src + '/styles/'))
     .pipe(reload({ stream: true }));
 });
@@ -150,12 +167,13 @@ gulp.task('build', function (done) {
   runSequence(
     ['clean:before', 'lint:js'],
     'generate:main.css',
+    'generate:renderfirst',
     'copy',
     'minify:html',
     done);
 });
 
-gulp.task('serve', ['generate:main.css'], function () {
+gulp.task('serve', ['generate:main.css', 'generate:renderfirst'], function () {
 
   browserSyncOptions.server = dirs.src;
   browserSync(browserSyncOptions);
@@ -167,8 +185,9 @@ gulp.task('serve', ['generate:main.css'], function () {
   gulp.watch([
     dirs.src + '/styles/**/*.scss',
     dirs.src + '/img/**/*',
-    '!' + dirs.src + '/css/main.css'
-  ], ['generate:main.css']);
+    '!' + dirs.src + '/css/main.css',
+    '!' + dirs.src + '/css/renderfirst'
+  ], ['generate:main.css', 'generate:renderfirst']);
 
   gulp.watch([
     dirs.src + '/js/**/*.js',
