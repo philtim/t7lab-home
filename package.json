@@ -1,23 +1,38 @@
 {
   "private": true,
+  "scripts": {
+    "build": "gulp build",
+    "serve": "gulp serve",
+    "serve:build": "gulp serve:build",
+    "test": "gulp build"
+  },
   "engines": {
     "node": ">=6"
+  },
+  "t7lab-configs": {
+    "directories": {
+      "dist": "dist",
+      "src": "src"
+    }
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-register": "^6.5.2",
-    "browser-sync": "^2.2.1",
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.1",
+    "browser-sync": "^2.18.12",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-css-base64": "^1.3.4",
+    "gulp-csso": "^3.0.0",
+    "gulp-gzip": "^1.4.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
     "gulp-babel": "^6.1.1",
     "gulp-cache": "^0.4.2",
     "gulp-cssnano": "^2.0.0",
     "gulp-eslint": "^3.0.0",
     "gulp-filter": "^4.0.0",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.0.1",
     "gulp-inline-css": "^3.1.0",
     "gulp-load-plugins": "^1.2.4",
@@ -27,10 +42,15 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-style-inject": "^0.1.0",
     "gulp-uglify": "^2.0.0",
-    "gulp-useref": "^3.0.0",
     "main-bower-files": "^2.5.0",
     "run-sequence": "^1.2.2",
-    "wiredep": "^4.0.0"
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-rework": "^1.2.0",
+    "gulp-smoosher": "0.0.9",
+    "gulp-uncss": "^1.0.6",
+    "gulp-useref": "^3.1.2",
+    "rework-npm": "^1.0.0"
   },
   "eslintConfig": {
     "env": {
