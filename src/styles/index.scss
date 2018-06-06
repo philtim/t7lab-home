@@ -200,6 +200,10 @@ a img {
 
     li {
       margin: 0;
+
+      a {
+        color: white;
+      }
     }
   }
 }
@@ -671,9 +675,29 @@ a img {
   }
 
   &--impressum {
-    h1, h2 {
+    h1, h2, h3 {
       display: block;
       width: 100%;
+      text-align: left;
+    }
+
+    h2, h3 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    strong {
+      display: block;
+      width: 100%;
+      margin: 30px 0 10px 0;
+
+      &.noPadding {
+        margin-top: 0;
+      }
+    }
+
+    .legal-source {
+      margin-top: 50px;
     }
 
     p {
