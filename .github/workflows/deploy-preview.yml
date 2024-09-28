@@ -1,0 +1,45 @@
+name: Deploy Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: preview
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Setup SSH Key for GitHub Actions
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          eval $(ssh-agent)
+          ssh-add ~/.ssh/id_rsa
+
+      - name: Terraform Init
+        working-directory: terraform
+        run: terraform init
+
+      - name: Terraform Apply
+        working-directory: terraform
+        env:
+          HETZNER_TOKEN: ${{ secrets.HETZNER_TOKEN }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+          CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+        run: terraform apply -auto-approve
+
+      - name: Deploy Docker Container
+        run: |
+          ssh user@${{ steps.terraform.outputs.shared_server_ip }} \
+          "docker run -d --name preview-${{ github.head_ref }} -p 800${{ github.run_number }}:80 my-app-image"
+
+      - name: Configure NGINX
+        run: |
+          ssh user@${{ steps.terraform.outputs.shared_server_ip }} \
+          "bash /scripts/nginx_config.sh ${{ github.head_ref }} 800${{ github.run_number }}"

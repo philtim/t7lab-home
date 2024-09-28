@@ -42,3 +42,6 @@ dist
 bower_components
 src/styles/main.css
 src/styles/renderfirst.css
+
+.terraform
+.terraform.lock*

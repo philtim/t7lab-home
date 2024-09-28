@@ -1,0 +1,20 @@
+name: Cleanup Preview
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Remove Docker Container
+      run: |
+        ssh user@${{ steps.terraform.outputs.shared_server_ip }} \
+        "docker rm -f preview-${{ github.head_ref }}"
+
+    - name: Remove NGINX Configuration
+      run: |
+        ssh user@${{ steps.terraform.outputs.shared_server_ip }} \
+        pwd \
+        "bash scripts/cleanup_nginx.sh ${{ github.head_ref }}"
