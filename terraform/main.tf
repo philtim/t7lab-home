@@ -2,11 +2,9 @@ terraform {
   required_providers {
     hcloud = {
       source  = "hetznercloud/hcloud"
-      version = "1.33.0"  # Make sure to specify a valid version, check latest in registry
+      version = "1.48.1"
     }
   }
-
-  required_version = ">= 0.13"
 }
 
 provider "hcloud" {
@@ -30,7 +28,7 @@ resource "hcloud_server" "shared_preview_server" {
 
     connection {
       type        = "ssh"
-      user        = "root"
+      user        = "phil"
       private_key = file(var.private_key_path)
       host        = self.ipv4_address
     }

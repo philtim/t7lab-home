@@ -8,13 +8,26 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
-    - name: Remove Docker Container
-      run: |
-        ssh user@${{ steps.terraform.outputs.shared_server_ip }} \
-        "docker rm -f preview-${{ github.head_ref }}"
+      - name: Setup SSH Key for GitHub Actions
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          eval $(ssh-agent)
+          ssh-add ~/.ssh/id_rsa
 
-    - name: Remove NGINX Configuration
-      run: |
-        ssh user@${{ steps.terraform.outputs.shared_server_ip }} \
-        pwd \
-        "bash scripts/cleanup_nginx.sh ${{ github.head_ref }}"
+      - name: Remove Docker Container
+        run: |
+          ssh root@88.198.127.216 "docker rm -f preview-${{ github.head_ref }}"
+
+      - name: Remove NGINX Configuration
+        run: |
+          ssh root@88.198.127.216 "bash /path/to/scripts/cleanup_nginx.sh ${{ github.head_ref }}"
+
+      - name: Remove DNS Record in Cloudflare
+        uses: cloudflare/wrangler-action@1.2.0
+        with:
+          apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          zoneId: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          cloudflare-cli dns delete "${{ github.head_ref }}.preview.t7lab.com"

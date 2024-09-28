@@ -7,13 +7,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: preview
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
 
       - name: Setup SSH Key for GitHub Actions
         run: |
@@ -22,24 +18,19 @@ jobs:
           eval $(ssh-agent)
           ssh-add ~/.ssh/id_rsa
 
-      - name: Terraform Init
-        working-directory: terraform
-        run: terraform init
-
-      - name: Terraform Apply
-        working-directory: terraform
-        env:
-          HETZNER_TOKEN: ${{ secrets.HETZNER_TOKEN }}
-          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
-          CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
-        run: terraform apply -auto-approve
-
       - name: Deploy Docker Container
         run: |
-          ssh user@${{ steps.terraform.outputs.shared_server_ip }} \
-          "docker run -d --name preview-${{ github.head_ref }} -p 800${{ github.run_number }}:80 my-app-image"
+          ssh root@88.198.127.216 "docker run -d --name preview-${{ github.head_ref }} -p 800${{ github.run_number }}:80 my-app-image"
 
-      - name: Configure NGINX
+      - name: Configure NGINX for Preview
         run: |
-          ssh user@${{ steps.terraform.outputs.shared_server_ip }} \
-          "bash /scripts/nginx_config.sh ${{ github.head_ref }} 800${{ github.run_number }}"
+          ssh root@88.198.127.216 "bash /home/phil/scripts/nginx_configure.sh ${{ github.head_ref }} 800${{ github.run_number }}"
+
+      - name: Add DNS Record in Cloudflare
+        uses: cloudflare/wrangler-action@1.2.0
+        with:
+          apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          zoneId: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          cloudflare-cli dns create --type A --name "${{ github.head_ref }}.preview.t7lab.com" --content "<your-hetzner-ip>" --proxied true
