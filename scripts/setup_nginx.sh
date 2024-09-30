@@ -6,7 +6,7 @@ port=$2
 # Create NGINX config for the subdomain
 cat <<EOT > /etc/nginx/sites-available/$branch_name
 server {
-    server_name ${branch_name}.preview.t7lab.com;
+    server_name ${branch_name}--preview.t7lab.com;
     location / {
         proxy_pass http://localhost:$port;
         proxy_set_header Host \$host;
