@@ -36,7 +36,7 @@ jobs:
           docker stop preview-${{ github.head_ref }} || true && \
           docker rm preview-${{ github.head_ref }} || true && \
           docker pull ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }} && \
-          docker run -d --name preview-${{ github.head_ref }} -p 8085:8085 ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }}"
+          docker run -d --name preview-${{ github.head_ref }} -p 8085:80 ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }}"
 
       - name: Configure NGINX for Preview
         run: |
