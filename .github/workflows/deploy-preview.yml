@@ -25,15 +25,15 @@ jobs:
 
       - name: Deploy Docker Container
         run: |
-          ssh root@${{ secrets.SSH_HOST }} "docker run -d --name preview-${{ github.head_ref }} -p 800${{ github.run_number }}:80 my-app-image"
+          ssh root@${{ vars.SSH_HOST }} "docker run -d --name preview-${{ github.head_ref }} -p 800${{ github.run_number }}:80 my-app-image"
 
       - name: Configure NGINX for Preview
         run: |
-          ssh root@${{ secrets.SSH_HOST }} "bash /home/phil/scripts/nginx_configure.sh ${{ github.head_ref }} 800${{ github.run_number }}"
+          ssh root@${{ vars.SSH_HOST }} "bash /home/phil/scripts/nginx_configure.sh ${{ github.head_ref }} 800${{ github.run_number }}"
 
       - name: Add DNS Record in Cloudflare
         run: |
-          cloudflare-cli dns create --type A --name "${{ github.head_ref }}.preview.t7lab.com" --content "${{ secrets.SSH_HOST }}" --proxied true
+          cloudflare-cli dns create --type A --name "${{ github.head_ref }}.preview.t7lab.com" --content "${{ vars.SSH_HOST }}" --proxied true
         env:
           CF_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
           CF_API_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
