@@ -36,11 +36,11 @@ jobs:
           docker stop preview-${{ github.head_ref }} || true && \
           docker rm preview-${{ github.head_ref }} || true && \
           docker pull ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }} && \
-          docker run -d --name preview-${{ github.head_ref }} -p 80${{ github.run_number }}:8080 ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }}"
+          docker run -d --name preview-${{ github.head_ref }} -p 8085:8085 ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }}"
 
       - name: Configure NGINX for Preview
         run: |
-          ssh root@${{ vars.SSH_HOST }} "bash /home/phil/scripts/nginx_configure.sh ${{ github.head_ref }} 80${{ github.run_number }}"
+          ssh root@${{ vars.SSH_HOST }} "bash /home/phil/scripts/nginx_configure.sh ${{ github.head_ref }} 8085"
 
       - name: Check and Add DNS Record in Cloudflare
         run: |
