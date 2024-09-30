@@ -17,20 +17,25 @@ jobs:
           touch ~/.ssh/id_rsa
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 88.198.127.216 >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
           echo 'done'
+          ls -la ~/.ssh
+
+      - name: Test ssh connection
+        run: |
+          ssh root@${{ secrets.SSH_HOST }}
 
       - name: Deploy Docker Container
         run: |
-          ssh root@88.198.127.216 "docker run -d --name preview-${{ github.head_ref }} -p 800${{ github.run_number }}:80 my-app-image"
+          ssh root@${{ secrets.SSH_HOST }} "docker run -d --name preview-${{ github.head_ref }} -p 800${{ github.run_number }}:80 my-app-image"
 
       - name: Configure NGINX for Preview
         run: |
-          ssh root@88.198.127.216 "bash /home/phil/scripts/nginx_configure.sh ${{ github.head_ref }} 800${{ github.run_number }}"
+          ssh root@${{ secrets.SSH_HOST }} "bash /home/phil/scripts/nginx_configure.sh ${{ github.head_ref }} 800${{ github.run_number }}"
 
       - name: Add DNS Record in Cloudflare
         run: |
-          cloudflare-cli dns create --type A --name "${{ github.head_ref }}.preview.t7lab.com" --content "88.198.127.216" --proxied true
+          cloudflare-cli dns create --type A --name "${{ github.head_ref }}.preview.t7lab.com" --content "${{ secrets.SSH_HOST }}" --proxied true
         env:
           CF_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
           CF_API_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
