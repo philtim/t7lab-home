@@ -44,15 +44,27 @@ jobs:
 
       - name: Add DNS Record in Cloudflare
         run: |
-          ssh root@${{ vars.SSH_HOST }} "curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records" \
-           -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
-           -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY }}" \
+          ssh root@${{ vars.SSH_HOST }} 'curl -s -w "\n%{http_code}" -X POST "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records" \
+            -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
+            -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY }}" \
             -H "Content-Type: application/json" \
-            --data '{
-              "type": "A",
-              "name": "${{ github.head_ref }}.preview.t7lab.com",
-              "content": "${{ vars.SSH_HOST }}",
-              "ttl": 3360,
-              "proxied": false
-            }'
-          "
+            --data '\''{"type":"A","name":"${{ github.head_ref }}.preview.t7lab.com","content":"${{ vars.SSH_HOST }}","ttl":3360,"proxied":false}'\'' ' \
+          | tee /tmp/cf_response
+
+          HTTP_STATUS=$(tail -n1 /tmp/cf_response)
+          BODY=$(sed '$ d' /tmp/cf_response)
+
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            SUCCESS=$(echo "$BODY" | jq -r '.success')
+            if [ "$SUCCESS" = "true" ]; then
+              echo "DNS record created successfully"
+            else
+              echo "Failed to create DNS record. API response:"
+              echo "$BODY"
+              exit 1
+            fi
+          else
+            echo "HTTP request failed with status $HTTP_STATUS. Response:"
+            echo "$BODY"
+            exit 1
+          fi
