@@ -12,16 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup SSH Key for GitHub Actions
-        run: |
-          mkdir ~/.ssh
-          touch ~/.ssh/id_rsa
-          printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          echo ${{ vars.SSH_HOST }}
-          ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
-          echo 'done'
-          ls -la ~/.ssh
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Test ssh connection
         run: |
