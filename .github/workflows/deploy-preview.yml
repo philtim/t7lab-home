@@ -44,11 +44,20 @@ jobs:
 
       - name: Add DNS Record in Cloudflare
         run: |
-          ssh root@${{ vars.SSH_HOST }} 'curl -s -w "\n%{http_code}" -X POST "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records" \
-            -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
-            -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            --data '\''{"type":"A","name":"${{ github.head_ref }}.preview.t7lab.com","content":"${{ vars.SSH_HOST }}","ttl":3360,"proxied":false}'\'' ' \
+          ssh root@${{ vars.SSH_HOST }} 'curl --request POST \
+            --url https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE }}/dns_records \
+            --header "Content-Type: application/json" \
+            --header "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            --data '{
+            "comment": "Domain verification record",
+            "name": "${{ github.head_ref }}.preview.t7lab.com",
+            "proxied": false,
+            "settings": {},
+            "tags": [],
+            "ttl": 3600,
+            "content": "${{ vars.SSH_HOST }}",
+            "type": "A"
+          }'' \
           | tee /tmp/cf_response
 
           HTTP_STATUS=$(tail -n1 /tmp/cf_response)
