@@ -15,15 +15,16 @@ jobs:
         run: |
           mkdir ~/.ssh
           touch ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+          echo ${{ vars.SSH_HOST }}
+          ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
           echo 'done'
           ls -la ~/.ssh
 
       - name: Test ssh connection
         run: |
-          ssh root@"${{ secrets.SSH_HOST }}"
+          ssh root@${{ vars.SSH_HOST }}
 
       - name: Deploy Docker Container
         run: |
