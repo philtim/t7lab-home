@@ -7,7 +7,17 @@ on:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+    environment: preview
     steps:
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host-keys: ${{ vars.SSH_HOST }}
+
+      - name: Add Host to known_hosts
+        run: |
+          ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Remove DNS Record
         run: |
           SUBDOMAIN="${{ github.head_ref }}--preview.t7lab.com"
@@ -35,3 +45,7 @@ jobs:
         run: |
           ssh root@${{ vars.SSH_HOST }} "docker stop preview-${{ github.head_ref }} || true && \
           docker rm preview-${{ github.head_ref }} || true"
+
+      - name: Remove NGINX Preview site
+        run: |
+          ssh root@${{ vars.SSH_HOST }} "bash /home/phil/scripts/nginx_cleanup.sh ${{ github.head_ref }}"
