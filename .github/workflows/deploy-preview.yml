@@ -69,12 +69,13 @@ jobs:
           fi
 
           # If we reach here, the record doesn't exist, so we create it
-          CREATE_RESPONSE=$(ssh root@${{ vars.SSH_HOST }} 'curl -s -w "\n%{http_code}" --request POST \
-            --url https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records \
-            --header "X-Auth-Email: ${{ vars.CLOUDFLARE_EMAIL }}" \
-            --header "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
-            --header "Content-Type: application/json" \
-            --data '"'"'{"name":"'$SUBDOMAIN'","proxied":true,"settings":{},"tags":[],"ttl":3600,"content":"${{ vars.SSH_HOST }}","type":"A"}'"'"'')
+              TIMESTAMP=$(date +%s)
+              CREATE_RESPONSE=$(ssh root@${{ vars.SSH_HOST }} 'curl -s -w "\n%{http_code}" --request POST \
+                --url https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records \
+                --header "X-Auth-Email: ${{ vars.CLOUDFLARE_EMAIL }}" \
+                --header "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
+                --header "Content-Type: application/json" \
+                --data '"'"'{"name":"'$SUBDOMAIN'","proxied":true,"settings":{},"tags":[],"ttl":3600,"content":"${{ vars.SSH_HOST }}","type":"A","comment":"Created at '$TIMESTAMP'"}'"'"'')
 
           CREATE_HTTP_STATUS=$(echo "$CREATE_RESPONSE" | tail -n1)
           CREATE_BODY=$(echo "$CREATE_RESPONSE" | sed '$ d')
