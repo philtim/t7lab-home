@@ -41,6 +41,7 @@ jobs:
       - name: Configure caddy for Preview
         run: |
 <<<<<<< HEAD
+<<<<<<< HEAD
           scp ./scripts/configure_caddy.sh github@${{ vars.SSH_HOST }}:/home/github/configure_caddy.sh
           ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/configure_caddy.sh && /home/github/configure_caddy.sh ${{ github.head_ref }} 8085 && rm /home/github/configure_caddy.sh"
 =======
@@ -49,6 +50,12 @@ jobs:
           ssh root@${{ vars.SSH_HOST }} "/tmp/setup_nginx.sh ${{ github.head_ref }} 8085"
           ssh root@${{ vars.SSH_HOST }} "rm /tmp/setup_nginx.sh"
 >>>>>>> 367f20391e72 (adjust github actions)
+=======
+          scp ./scripts/setup_nginx.sh github@${{ vars.SSH_HOST }}:/tmp/setup_nginx.sh
+          ssh github@${{ vars.SSH_HOST }} "chmod +x /tmp/setup_nginx.sh"
+          ssh github@${{ vars.SSH_HOST }} "/tmp/setup_nginx.sh ${{ github.head_ref }} 8085"
+          ssh github@${{ vars.SSH_HOST }} "rm /tmp/setup_nginx.sh"
+>>>>>>> cddd0092fd2c (switch to github user)
 
       - name: Check and Add DNS Record in Cloudflare
         run: |
