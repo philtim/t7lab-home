@@ -19,7 +19,7 @@ server {
 EOT
 
 # Symlink to sites-enabled
-sudo ln -s /etc/nginx/sites-available/$branch_name /etc/nginx/sites-enabled/
+sudo ln -fs /etc/nginx/sites-available/$branch_name /etc/nginx/sites-enabled/
 
 # Reload NGINX to apply changes
 sudo systemctl reload nginx
