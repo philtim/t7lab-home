@@ -4,7 +4,8 @@ branch_name=$1
 port=$2
 
 # Create NGINX config for the subdomain
-sudo cat <<EOT > /etc/nginx/sites-available/$branch_name
+sudo tee /etc/nginx/sites-available/$branch_name > /dev/null
+<<EOT
 server {
     server_name ${branch_name}--preview.t7lab.com;
     location / {
