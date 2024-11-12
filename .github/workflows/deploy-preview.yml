@@ -43,6 +43,7 @@ jobs:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           scp ./scripts/configure_caddy.sh github@${{ vars.SSH_HOST }}:/home/github/configure_caddy.sh
           ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/configure_caddy.sh && /home/github/configure_caddy.sh ${{ github.head_ref }} 8085 && rm /home/github/configure_caddy.sh"
 =======
@@ -66,6 +67,10 @@ jobs:
           scp ./scripts/setup_nginx.sh github@${{ vars.SSH_HOST }}:/home/github/setup_nginx.sh
           ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/setup_nginx.sh && /home/github/setup_nginx.sh ${{ github.head_ref }} 8085"
 >>>>>>> 0b6ea85980e4 (adjust nginx script)
+=======
+          scp ./scripts/setup_nginx.sh github@${{vars.SSH_HOST}}:/home/github/setup_nginx.sh
+           ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/setup_nginx.sh && /home/github/setup_nginx.sh ${{ github.head_ref }} 8085"
+>>>>>>> d9af8ecaa3f6 (adjust nginx script)
 
       - name: Check and Add DNS Record in Cloudflare
         run: |
