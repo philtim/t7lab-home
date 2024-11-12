@@ -53,6 +53,7 @@ jobs:
 =======
           scp ./scripts/setup_nginx.sh github@${{ vars.SSH_HOST }}:/tmp/setup_nginx.sh
           ssh github@${{ vars.SSH_HOST }} "chmod +x /tmp/setup_nginx.sh"
+          ssh github@${{ vars.SSH_HOST }} "ls -la /tmp"
           ssh github@${{ vars.SSH_HOST }} "/tmp/setup_nginx.sh ${{ github.head_ref }} 8085"
           ssh github@${{ vars.SSH_HOST }} "rm /tmp/setup_nginx.sh"
 >>>>>>> cddd0092fd2c (switch to github user)
