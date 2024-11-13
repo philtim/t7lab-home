@@ -38,10 +38,13 @@ jobs:
           docker pull ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }} && \
           docker run -d --name preview-${{ github.head_ref }} -p 8085:8080 ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }}"
 
-      - name: Configure caddy for Preview
+      - name: Configure Caddy
+        id: configure_caddy
         run: |
-          scp ./scripts/configure_caddy.sh github@${{ vars.SSH_HOST }}:/home/github/configure_caddy.sh
-          ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/configure_caddy.sh && /home/github/configure_caddy.sh ${{ github.head_ref }} 8085 && rm /home/github/configure_caddy.sh"
+          scp ./scripts/configure_caddy.sh github@${{ vars.SSH_HOST }}:/home/github/
+          PORT=$(ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/configure_caddy.sh && /home/github/configure_caddy.sh ${{ github.head_ref }} 8085 && rm /home/github/configure_caddy.sh")
+          echo "Selected port: $PORT"
+          echo "port=$PORT" >> $GITHUB_OUTPUT
 
       - name: Check and Add DNS Record in Cloudflare
         run: |
