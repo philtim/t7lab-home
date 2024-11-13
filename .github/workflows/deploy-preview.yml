@@ -40,42 +40,8 @@ jobs:
 
       - name: Configure caddy for Preview
         run: |
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           scp ./scripts/configure_caddy.sh github@${{ vars.SSH_HOST }}:/home/github/configure_caddy.sh
           ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/configure_caddy.sh && /home/github/configure_caddy.sh ${{ github.head_ref }} 8085 && rm /home/github/configure_caddy.sh"
-=======
-          scp ./scripts/setup_nginx.sh root@${{ vars.SSH_HOST }}:/tmp/setup_nginx.sh
-          ssh root@${{ vars.SSH_HOST }} "chmod +x /tmp/setup_nginx.sh"
-          ssh root@${{ vars.SSH_HOST }} "/tmp/setup_nginx.sh ${{ github.head_ref }} 8085"
-          ssh root@${{ vars.SSH_HOST }} "rm /tmp/setup_nginx.sh"
->>>>>>> 367f20391e72 (adjust github actions)
-=======
-          scp ./scripts/setup_nginx.sh github@${{ vars.SSH_HOST }}:/tmp/setup_nginx.sh
-<<<<<<< HEAD
-          ssh github@${{ vars.SSH_HOST }} "chmod +x /tmp/setup_nginx.sh"
-          ssh github@${{ vars.SSH_HOST }} "ls -la /tmp"
-          ssh github@${{ vars.SSH_HOST }} "/tmp/setup_nginx.sh ${{ github.head_ref }} 8085"
-          ssh github@${{ vars.SSH_HOST }} "rm /tmp/setup_nginx.sh"
->>>>>>> cddd0092fd2c (switch to github user)
-=======
-          ssh github@${{ vars.SSH_HOST }} "chmod +x /tmp/setup_nginx.sh && /tmp/setup_nginx.sh ${{ github.head_ref }} 8085"
->>>>>>> 6b3a93092f93 (adjust nginx script)
-=======
-          scp ./scripts/setup_nginx.sh github@${{ vars.SSH_HOST }}:/home/github/setup_nginx.sh
-          ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/setup_nginx.sh && /home/github/setup_nginx.sh ${{ github.head_ref }} 8085"
->>>>>>> 0b6ea85980e4 (adjust nginx script)
-=======
-          scp ./scripts/setup_nginx.sh github@${{vars.SSH_HOST}}:/home/github/setup_nginx.sh
-           ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/setup_nginx.sh && /home/github/setup_nginx.sh ${{ github.head_ref }} 8085"
->>>>>>> d9af8ecaa3f6 (adjust nginx script)
-=======
-          scp ./scripts/setup_nginx.sh github@${{ vars.SSH_HOST }}:/home/github/setup_nginx.sh
-          ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/setup_nginx.sh && /home/github/setup_nginx.sh ${{ github.head_ref }} 8085 && rm /home/github/setup_nginx.sh"
->>>>>>> ef1cb6a0501c (adjust nginx script)
 
       - name: Check and Add DNS Record in Cloudflare
         run: |
