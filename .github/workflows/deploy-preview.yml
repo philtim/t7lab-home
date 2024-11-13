@@ -30,14 +30,6 @@ jobs:
         run: |
           ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy Docker Container on Hetzner
-        run: |
-          ssh github@${{ vars.SSH_HOST }} "docker login ghcr.io -u '${{ github.actor }}' --password '${{ secrets.GITHUB_TOKEN }}' && \
-          docker stop preview-${{ github.head_ref }} || true && \
-          docker rm preview-${{ github.head_ref }} || true && \
-          docker pull ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }} && \
-          docker run -d --name preview-${{ github.head_ref }} -p 8085:8080 ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }}"
-
       - name: Configure Caddy
         id: configure_caddy
         run: |
@@ -45,6 +37,14 @@ jobs:
           PORT=$(ssh github@${{ vars.SSH_HOST }} "chmod +x /home/github/configure_caddy.sh && /home/github/configure_caddy.sh ${{ github.head_ref }} 8085 && rm /home/github/configure_caddy.sh")
           echo "Selected port: $PORT"
           echo "port=$PORT" >> $GITHUB_OUTPUT
+
+      - name: Deploy Docker Container on Hetzner
+        run: |
+          ssh github@${{ vars.SSH_HOST }} "docker login ghcr.io -u '${{ github.actor }}' --password '${{ secrets.GITHUB_TOKEN }}' && \
+          docker stop preview-${{ github.head_ref }} || true && \
+          docker rm preview-${{ github.head_ref }} || true && \
+          docker pull ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }} && \
+          docker run -d --name preview-${{ github.head_ref }} -p ${{ steps.configure_caddy.outputs.port }}:8080 ghcr.io/${{ github.repository }}/t7lab-website:${{ github.head_ref }}"
 
       - name: Check and Add DNS Record in Cloudflare
         run: |
