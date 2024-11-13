@@ -1,7 +1,8 @@
 #!/bin/bash
 
-initial_port=$1
-delete_flag=$2
+branch_name=$1
+initial_port=$2
+delete_flag=$3
 
 caddyfile="/etc/caddy/Caddyfile"
 subdomain="${branch_name}--preview.t7lab.com"
