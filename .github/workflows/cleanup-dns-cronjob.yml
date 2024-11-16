@@ -24,7 +24,7 @@ jobs:
           TEN_DAYS_AGO=$(date -d '10 days ago' +%s)
 
           # List all DNS records
-          DNS_RECORDS=$(ssh root@${{ vars.SSH_HOST }} 'curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records" \
+          DNS_RECORDS=$(ssh github@${{ vars.SSH_HOST }} 'curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records" \
             -H "X-Auth-Email: ${{ vars.CLOUDFLARE_EMAIL }}" \
             -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
             -H "Content-Type: application/json"')
@@ -36,7 +36,7 @@ jobs:
               CREATED_AT="${BASH_REMATCH[1]}"
               if [ "$CREATED_AT" -lt "$TEN_DAYS_AGO" ]; then
                 ID=$(echo "$record" | jq -r '.id')
-                ssh root@${{ vars.SSH_HOST }} 'curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records/'$ID'" \
+                ssh github@${{ vars.SSH_HOST }} 'curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records/'$ID'" \
                   -H "X-Auth-Email: ${{ vars.CLOUDFLARE_EMAIL }}" \
                   -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
                   -H "Content-Type: application/json"'
