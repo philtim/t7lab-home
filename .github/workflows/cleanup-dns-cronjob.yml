@@ -1,9 +1,9 @@
 name: Cleanup Old DNS Records
 
 on:
-  schedule:
-    - cron: "0 0 * * *" # Run daily at midnight UTC
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   cleanup:
@@ -21,8 +21,8 @@ jobs:
           ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Cleanup old DNS records
-        if: github.event_name == 'workflow_dispatch'
-        run:
+        run: |
+          TEN_DAYS_AGO=$(date -d '10 days ago' +%s)
 
           # List all DNS records
           DNS_RECORDS=$(ssh github@${{ vars.SSH_HOST }} 'curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/dns_records" \
